@@ -1,0 +1,37 @@
+# 부모 클래스 A 정의
+class A:
+    a = 2
+
+    def __init__(self):
+        self.a += 3
+
+    def fn(self):
+        self.a += 5
+
+# 자식 클래스 B 정의 (A를 상속받음)
+class B(A):
+    a = 7
+
+    def __init__(self):   # 생성자 
+        self.a += 11      # a = 7 + 11 = 18 
+
+    def fn(self):
+        self.a += 13  # a의 값 18 + 13 = 31 
+
+# B 클래스의 인스턴스 a 생성
+a = B()
+
+# 인스턴스 a의 속성 a를 출력
+# B 클래스의 생성자 호출 
+# 18 
+print(a.a, end="") 
+
+# 인스턴스 a의 fn 메서드 호출
+# B 클래스의 fn 호출
+a.fn()
+
+# 변경된 인스턴스 a의 속성 a를 출력
+# 31 
+print(a.a)
+
+# 최종출력 1831 
